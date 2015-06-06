@@ -16,28 +16,14 @@ $(document).ready(function() {
     }
     /* END of configuration options */
     var datasetDataEndpoint = datasetDomain+"resource/"+datesetID+".json"
-    var datasetMetadataEndpoint = datasetDomain+"api/views/"+datesetID+".json"
     $("#legend-high").attr("style","background-color: "+highColor);
     $("#legend-low").attr("style","background-color: "+lowColor);
 
-    $.get(datasetMetadataEndpoint, function(response){
-        var datasetName = response.name
-        $("#chart-title").text(datasetName)
-        $("#info .dataset-link").attr("href",datasetDomain+"d/"+datesetID)
-        $("#info .dataset-link").attr("title",datasetName)
-        $("#info .attribution-name a").text(response.attribution)
-        $("#info .attribution-link").attr("href",response.attributionLink)
-        $("#info .attribution-link").attr("title",response.attribution)
-
-        var datasetColumnToColorBy = response.columns.filter(function(i){return i.fieldName == datasetColumnToColorByKey})[0]
-        $("#info .colored-by").text(datasetColumnToColorBy.name)
-        $("#info .legend-low-value").text(datasetColumnToColorBy.cachedContents.smallest)
-        $("#info .legend-high-value").text(datasetColumnToColorBy.cachedContents.largest)
-
-    })
-
     $.get(datasetDataEndpoint, function(response){
         var mapData = {}
+
+        // somehow create `response` to be an array of states' data
+
         // just in case the state is not in the data set, let's color it the default color
         $.each(["HI", "AK", "FL", "SC", "GA", "AL", "NC", "TN", "RI", "CT", "MA",
          "ME", "NH", "VT", "NY", "NJ", "PA", "DE", "MD", "WV", "KY", "OH",
@@ -53,6 +39,7 @@ $(document).ready(function() {
             var genColor = d3.interpolate(lowColor, highColor)(parseFloat(stateData[datasetColumnToColorByKey])/4)
             mapData[stateData.state_code].color = genColor
         })
+        console.log(mapData)
         uStates.draw("#statesvg", mapData, tooltipHtml);
     })
 
