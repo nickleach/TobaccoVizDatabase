@@ -21,5 +21,8 @@
     "normalize.css": "~3.0.3",
     "handlebars": "~3.0.3",
     "font-awesome": "~4.3.0"
+  },
+  "devDependencies": {
+    "handlebars": "~3.0.3"
   }
 }
