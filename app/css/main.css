@@ -40,3 +40,13 @@ body {
   padding: 4px;
   color: white;
   opacity: 0; }
+
+.content-left {
+  width: 25%;
+  float: left;
+  height: 500px;
+  background-color: #527442; }
+
+.content-right {
+  width: 75%;
+  float: right; }

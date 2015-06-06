@@ -11,21 +11,26 @@
 <!-- adapted from bl.ocks.org/NPashaP/raw/a74faf20b492ad377312/ -->
 <script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
 <script src="//cdn.rawgit.com/marks/4b82cc36a8cfd2d27005/raw/6c1defeffbdad9a417dc7ac1c862ead39e3b863c/uStates.js"></script>
-
-<div id="tooltip"></div><!-- div to hold tooltip. -->
-<div id="info">
-    <h2 id="chart-title"></h2>
-    <p>States are colored by <span class='colored-by'></span> and range from <span class="legend-low-value"></span> to <span class="legend-high-value"></span>. You can view the data powering this map at <a target='blank' class='dataset-link' href='#' title=''>this link chronicdata.cdc.gov</a>. Data from <span class='attribution-name'><a target='blank' class='attribution-link' href='#' title=''></a></span></p>
-</div>
-<svg width="960" height="600" id="statesvg"></svg> <!-- svg to hold the map. -->
-<div id="legend">
-    <h4>Legend</h4>
-    <table>
-        <tr><td id='legend-low'></td><td> Low Value</td></tr>
-        <tr><td id='legend-high'></td><td> High Value </td></tr>
-    </table>
-</div>
+<div class="content">
+  <div class="content-left">
   </div>
+  <div class="content-right">
+      <div id="tooltip"></div><!-- div to hold tooltip. -->
+      <div id="info">
+          <h2 id="chart-title"></h2>
+          <p>States are colored by <span class="colored-by"></span> and range from <span class="legend-low-value"></span> to <span class="legend-high-value"></span>. You can view the data powering this map at <a target="blank" class="dataset-link" href='#' title=''>this link chronicdata.cdc.gov</a>. Data from <span class="attribution-name"><a target="blank" class="attribution-link" href="# "title=""></a></span></p>
+      </div>
+      <svg width="960" height="600" id="statesvg"></svg> <!-- svg to hold the map. -->
+      <div id="legend">
+          <h4>Legend</h4>
+          <table>
+              <tr><td id="legend-low"></td><td> Low Value</td></tr>
+              <tr><td id="legend-high"></td><td> High Value </td></tr>
+          </table>
+      </div>
+    </div>
+  </div>
+</div>
 
   <!-- VENDOR -->
   <script src="js/vendor/jquery.js"></script>
