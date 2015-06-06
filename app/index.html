@@ -21,7 +21,11 @@
           <h2 id="chart-title"></h2>
           <p>States are colored by <span class="colored-by"></span> and range from <span class="legend-low-value"></span> to <span class="legend-high-value"></span>. You can view the data powering this map at <a target="blank" class="dataset-link" href='#' title=''>this link chronicdata.cdc.gov</a>. Data from <span class="attribution-name"><a target="blank" class="attribution-link" href="# "title=""></a></span></p>
       </div>
-      <svg width="960" height="600" id="statesvg"></svg> <!-- svg to hold the map. -->
+      <div style="width:576px; height:350px;">
+    <svg id="statesvg" width="100%" height="100%" viewBox="0 0 960 600" preserveAspectRatio="xMaxYmax"></svg> <!-- svg to hold the map. -->
+</div>
+
+<!-- svg to hold the map. -->
       <div id="legend">
           <h4>Legend</h4>
           <table>

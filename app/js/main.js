@@ -1,7 +1,7 @@
 $(document).ready(function() {
     /* START of configuration options */
     var lowColor = "#D9EAD3"
-    var highColor = "#274E13"
+    var highColor = "#F24642"
     var defaultColor = "#EEE"
     var datasetDomain = "//chronicdata.cdc.gov/"
     var datesetID = "3wxw-iz29"
