@@ -3,9 +3,10 @@ $(document).ready(function() {
     var lowColor = "#D9EAD3"
     var highColor = "#F24642"
     var defaultColor = "#EEE"
-    var datasetDomain = "//chronicdata.cdc.gov/"
-    var datesetID = "3wxw-iz29"
-    var datasetColumnToColorByKey = "provisionaltvalue"
+    // var datasetDomain = "//chronicdata.cdc.gov/"
+    // var datesetID = "3wxw-iz29"
+    // var datasetColumnToColorByKey = "provisionaltvalue"
+    var cdcJSON = 'https://chronicdata.cdc.gov/resource/ag3f-urcg.json';
 
     function tooltipHtml(stateName, stateData){ /* function to create html content string in tooltip div. */
         return "<h4>"+stateName+"</h4><table>"+
@@ -14,12 +15,13 @@ $(document).ready(function() {
             "<tr><td>Provision Value</td><td>"+(stateData.provisionvalue)+"</td></tr>"+
             "</table>";
     }
+
     /* END of configuration options */
-    var datasetDataEndpoint = datasetDomain+"resource/"+datesetID+".json"
+    // var datasetDataEndpoint = datasetDomain+"resource/"+datesetID+".json"
     $("#legend-high").attr("style","background-color: "+highColor);
     $("#legend-low").attr("style","background-color: "+lowColor);
 
-    $.get(datasetDataEndpoint, function(response){
+    $.get(cdcJSON, function(response){
         var mapData = {}
 
         // somehow create `response` to be an array of states' data
@@ -38,8 +40,9 @@ $(document).ready(function() {
             // set a new color based on the value in the configuration file
             var genColor = d3.interpolate(lowColor, highColor)(parseFloat(stateData[datasetColumnToColorByKey])/4)
             mapData[stateData.state_code].color = genColor
+
         })
-        console.log(mapData)
+
         uStates.draw("#statesvg", mapData, tooltipHtml);
     })
 
