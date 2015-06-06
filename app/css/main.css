@@ -1,18 +1,42 @@
-.mainmap {
-  width: 200%; }
+#legend h4 {
+  margin-bottom: 5px; }
 
-.content-left {
-  width: 25%;
-  float: left;
-  height: 500px;
-  background-color: grey; }
+#legend-low, #legend-high, .legend-value {
+  width: 15px; }
 
-.content-right {
-  width: 75%;
-  float: right; }
+body {
+  font-family: sans-serif; }
 
-#map {
-  margin-right: auto;
-  margin-left: auto; 
-  /* width: 216%; */
-}
+.state {
+  fill: none;
+  stroke: #a9a9a9;
+  stroke-width: 1; }
+
+.state:hover {
+  fill-opacity: 0.5; }
+
+#tooltip {
+  position: absolute;
+  text-align: center;
+  padding: 20px;
+  margin: 10px;
+  font-size: 1.4em;
+  background: lightsteelblue;
+  border: 1px;
+  border-radius: 2px;
+  pointer-events: none; }
+
+#tooltip h4 {
+  padding-top: 5px;
+  margin: 0;
+  font-size: 18px; }
+
+#tooltip {
+  background: rgba(0, 0, 0, 0.9);
+  border: 1px solid grey;
+  border-radius: 5px;
+  font-size: 14px;
+  width: auto;
+  padding: 4px;
+  color: white;
+  opacity: 0; }
