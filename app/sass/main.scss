@@ -4,6 +4,9 @@
 body{
     font-family: sans-serif;
 }
+.content{
+  width: 800px;
+}
 .state{
     fill: none;
     stroke: #a9a9a9;
@@ -43,6 +46,7 @@ body{
   float: left;
   height: 500px;
   background-color: #527442;
+  border-radius: 5px;
 }
 .content-right{
   width: 75%;
